@@ -11,6 +11,7 @@ public class Elephant extends Actor
     public Elephant() {
         setImage("images/elephant.png");
     }
+    
     public void act()
     {
         // Add your action code here.
@@ -21,6 +22,17 @@ public class Elephant extends Actor
         }
         
         // Remove the apple if the elephant eats it
-        removeTouching(Apple.class);
+        eat();
+    }
+    
+    /**
+     *  When elephant eats the apple it randomly spawns a new apple
+     */
+    public void eat() {
+        if(isTouching(Apple.class)) {
+            MyWorld world = (MyWorld) getWorld();
+            removeTouching(Apple.class);
+            world.createApple();
+        }
     }
 }
