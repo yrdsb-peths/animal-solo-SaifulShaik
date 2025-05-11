@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Apple extends Actor
 {
+    int speed = 1;
     public Apple() {
         setImage("images/apple1.png");
     }
@@ -23,5 +24,9 @@ public class Apple extends Actor
             world.gameOver();
             world.removeObject(this);
         }
+    }
+    
+    public void setSpeed(int spd) {
+        speed = spd;
     }
 }
