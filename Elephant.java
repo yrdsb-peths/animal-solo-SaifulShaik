@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
+    GreenfootSound elephantsound = new GreenfootSound("elephantcub.mp3");
+    
     public Elephant() {
         setImage("images/elephant.png");
     }
@@ -34,6 +36,7 @@ public class Elephant extends Actor
             removeTouching(Apple.class);
             world.createApple();
             world.increaseScore();
+            elephantsound.play();
         }
     }
 }
